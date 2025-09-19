@@ -1,0 +1,46 @@
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111827;
+  --card-bg: #f9fafb;
+  --primary: #2563eb;
+}
+[data-theme="dark"] {
+  --bg-color: #1f2937;
+  --text-color: #f9fafb;
+  --card-bg: #374151;
+  --primary: #3b82f6;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+.navbar, footer {
+  background-color: var(--card-bg) !important;
+}
+.card {
+  background-color: var(--card-bg);
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card-img-top {
+  height: 250px;      /* adjust height (200–300px looks best) */
+  object-fit: cover;  /* crop instead of stretching */
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border: none;
+}
+
+.hero {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
