@@ -20,13 +20,14 @@
           <img th:src="${book.file}" class="card-img-top" alt="Book Cover">
           <div class="card-body">
             <h5 class="card-title" th:text="${book.title}">Book Title</h5>
-            <p class="card-text text-muted mb-1" th:text="${book.author}">Author Name</p>
+            <p class="card-text text-muted mb-1" th:text="${book.user.username}">Author Name</p>
             <p class="fw-bold text-primary">$<span th:text="${#numbers.formatDecimal(book.price, 1, 2)}">$14.99</span>
             </p>
             <a th:href="@{book/{id}/detail(id=${book.id})}" class="btn btn-primary btn-sm">View Details</a>
 
-            <form th:href="@{book/{id}/delete(id=${book.id})}" method="post">
-              <button type="submit" class="btn btn-danger">Delete</button>
+            <form th:action="@{/book/{id}/delete(id=${book.id})}" method="post">
+              <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+              <button type="submit" class="btn btn-danger btn-sm mt-2">Delete</button>
             </form>
 
           </div>

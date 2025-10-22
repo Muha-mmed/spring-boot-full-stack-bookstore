@@ -21,7 +21,6 @@
           <th>Title</th>
           <th>Image</th>
           <th>Price</th>
-          <th>Author</th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +28,6 @@
           <td th:text="${cart.title}"></td>
           <td><img th:src="${cart.file}" alt="cover" style="width:60px;"></td>
           <td th:text="${cart.price}"></td>
-          <td th:text="${cart.author}"></td>
           <td><form th:href="@{/cart/delete/{id}(id=${cart.id})}" method="post">
       <button type="submit" class="btn btn-danger">Delete</button>
     </form> </td>
